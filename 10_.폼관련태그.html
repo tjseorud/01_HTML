@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>10_폼관련태그</title>
+</head>
+<body>
+  <h1>form(형식, 양식)</h1>
+  <pre>
+    - 입력 양식을 작성하는 판(영역)
+    - 내부에 작성된 값을 지정된 경로(html파일,서버)로 제출
+
+    [속성]
+    1. action(행동) : 제출될 파일/서버 경로 작성
+    2. method(방식) : 제출 방식 지정
+    3. name : 이름 지정(JS)
+    4. target : 제출된 페이지를 현재 탭/새탭 어디서 볼지 결정
+  </pre>
+
+  <h3>form test1</h3>
+  <form action="result.html">
+    input : <input type="text" name="temp">
+    <button type="submit">submit</button>
+  </form>
+  <hr>
+
+  <h3>GET 방식 제출</h3>
+  <pre>
+    - method="GET" : 주소에 데이터를 담아서 전달
+    - 데이터의 형식 ?key=value&key=value (쿼리스트링)
+    - key=value 같은 형식의 data를 Map 이라 함
+  </pre>
+  
+  <form action="result.html" method="get">
+    이름 : <input type="text" name="Name"><br>
+    나이 : <input type="text" name="Age"><br>
+    성별 :
+      남 <input type="radio" name="Gender" value="M">
+      여 <input type="radio" name="Gender" value="F">
+    <br>
+    <button type="submit">submit</button>
+  </form>
+  <hr>
+
+  <h3>POST 방식 제출</h3>
+  <pre>
+    - method="POST" : HTML Body에 데이터를 담아서 전달 
+    - 제출되는 데이터가 보이지 않음
+  </pre>
+
+  <form action="result.html" method="post">
+    ID : <input type="text" name="Id"><br>
+    PW : <input type="password" name="Pw"><br>
+    <button type="submit">submit</button>
+  </form>
+  <hr>
+
+  <h3>Button</h3>
+  <pre>
+    - 버튼을 만드는 태그
+    - type에 따라서 용도가 달라짐
+
+    type="submit"
+    - form 내부에 작성된 경우
+      해당 form의 모든 input 값을 action 경로로 제출
+
+    type="reset"
+    - form 내부에 작성된 경우
+      해당 form의 모든 input 값을 Reset(초기화)
+
+    type="button"
+    - 기능 없음
+      JS를 이용해 사용
+
+  </pre>
+  <form action="result.html" method="post">
+    ID : <input type="text" name="Id"><br>
+    PW : <input type="password" name="Pw"><br>
+    <button type="submit">submit</button>
+    <button type="reset">reset</button>
+    <button type="button" onclick="alert('클릭')">button</button>
+  </form>
+  <hr>
+
+  <h3>fieldset, legend</h3>
+  <pre>
+    fieldset : 테두리를 만들어서 영역을 나누는 태그
+    legend : fieldset의 이름을 지정하는 태그
+  </pre>
+  <fieldset>
+    <legend>FindByID</legend>
+    <form action="#">
+      NAME : <input type="text" name="Name"><br>
+      EMAIL : <input type="email" name="Email">
+      <button type="submit">Find</button> 
+    </form>
+  </fieldset>
+
+</body>
+</html>
